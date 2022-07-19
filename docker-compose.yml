@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+
+  uni-resolver:
+    build:
+      context: ./services/universal-resolver/
+      dockerfile: ./uni-resolver-web/docker/Dockerfile
+    logging:
+      driver: none
+    links:
+      - indy-did-driver
+      - uni-resolver-driver-did-uport
+
+  indy-did-driver:
+    build:
+      context: ./services/indy-did-resolver
+      dockerfile: ./docker/Dockerfile
+
+  uni-resolver-driver-did-uport:
+    image: uport/uni-resolver-driver-did-uport:2.3.0
+
+  did_comm_api:
+    build:
+      context: ./services/did_communication_api_v2/
+      dockerfile: ./docker/DockerFile
+    environment:
+      - API_PORT=${DID_COMM_API_PORT}
+    ports:
+      - ${DID_COMM_API_PORT}:${DID_COMM_API_PORT}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    links:
+      - access_decision_point
+
+  access_decision_point:
+    build:
+      context: ./services/ssi_access_decision_point/
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - "./access.control.ttl:/srv/config/access.control.ttl"
+    environment:
+      - API_PORT=${ADP_API_PORT}
+      - ACCESS_FILE_PATH=${ADP_ACCESS_FILE_PATH}
+    links:
+      - vc_jwt_verifier
+
+  vc_jwt_verifier:
+    build:
+      context: ./services/vc_jwt_verifier/
+      dockerfile: ./docker/Dockerfile
+    environment:
+      - API_PORT=${JWT_VERIFIER_PORT}
+    links:
+      - uni-resolver
