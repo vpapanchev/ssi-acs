@@ -1,0 +1,37 @@
+---
+services:
+
+  did_communication_api:
+    server:
+      host: 'host.docker.internal'
+      port: 5001
+      debug: true
+    webhooks:
+      request_received: "http://access_decision_point:5002/webhook/message/"
+    logging:
+      level: DEBUG
+
+  ssi_access_decision_point:
+    server:
+      host: "Used only when run locally"
+      port: "Used only when run locally"
+      debug: "Used only when run locally"
+    credentials:
+      verifiers:
+        jwt:
+          verify_vc_url: "http://vc_jwt_verifier:5003/verify/vc/?jwt={jwt_vc}"
+          verify_vp_url: "http://vc_jwt_verifier:5003/verify/vp/?verify_vcs={verify_credentials}&jwt={jwt_vp}"
+    logging:
+      level: DEBUG
+
+  vc_jwt_verifier:
+    server:
+      host: "Used only when run locally"
+      port: "Used only when run locally"
+      debug: "Used only when run locally"
+    resolver:
+      host: uni-resolver
+      port: 8080
+      api:  "/1.0/identifiers/{did}"
+    logging:
+      level: DEBUG
