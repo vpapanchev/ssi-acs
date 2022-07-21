@@ -10,7 +10,7 @@ This project provides automated scripts for deploying and starting the Microserv
 - [VC JWT Verifier](https://github.com/vpapanchev/vc-jwt-verifier) - Verification of [JSON-LD Verifiable Credentials expressed as JSON Web Tokens (JWTs)](https://www.w3.org/TR/vc-data-model/#json-web-token)
 - [Access Decision Point](https://github.com/vpapanchev/ssi-adp) - The core component of the ACS implementing multiple microservices - definition and management of the Access Control Logic (based on required Verifiable Credentials), creation of Verifiable Presentation Requests and verification of Verifiable Presentations, exchange of credentials and API for communication with the DID Communication API
 
-To use the Access Control System, an SSI-Client implementation with some specific functionality is required. An [example implementation](https://github.com/vpapanchev/ssi-acs-client) of such SSI-Client is provided.
+To use the Access Control System, an SSI-Client implementation with some specific functionality is required. An implementation of an [example SSI-Client](https://github.com/vpapanchev/ssi-acs-client) is provided.
 
 Currently, the system supports two DID Methods - Ethr-DIDs on any Ethereum network (we have mainly used the Ropsten Testnetwork) and Indy-DIDs on a locally-deployed [VON Network](https://github.com/bcgov/von-network).
 
