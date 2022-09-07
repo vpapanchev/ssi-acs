@@ -95,7 +95,8 @@ aifb:BachelorScienceDegreeCredentialShape
     # Accepted issuers: ethr_did_1 and indy_did_1
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0325d091902e468755694b1323dd63da52d05238384f0bf93b0e30f6dc5bc641d7>
-                               <did:indy:local:YY81GvjZpA9yu9bv3co6tZ> ) ; ] ;
+                               <did:indy:local:YY81GvjZpA9yu9bv3co6tZ>
+                               <did:web:papanchev.solidweb.org:dids:university-issuer> ) ; ] ;
     # Bachelor of Science Degree
     sh:property    [ sh:path  ( cred:credentialSubject ex:degree ) ;
                      sh:class ex:BachelorDegree ; ] ;
@@ -110,7 +111,8 @@ aifb:BachelorArtsDegreeCredentialShape
     # Accepted issuers: ethr_did_1 and indy_did_1
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0325d091902e468755694b1323dd63da52d05238384f0bf93b0e30f6dc5bc641d7>
-                               <did:indy:local:YY81GvjZpA9yu9bv3co6tZ> ) ; ] ;
+                               <did:indy:local:YY81GvjZpA9yu9bv3co6tZ>
+                               <did:web:papanchev.solidweb.org:dids:university-issuer> ) ; ] ;
     # Bachelor of Arts Degree
     sh:property    [ sh:path  ( cred:credentialSubject ex:degree ) ;
                      sh:class ex:BachelorDegree ; ] ;
@@ -125,7 +127,8 @@ aifb:BulgarianResidentCredentialShape
     # Accepted issuers: ethr_did_2 and indy_did_2
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0361c0c20eb8a1d4ab659faa218a23b93bf59f0b4eed4d1d3cd929af3ba977f2c6>
-                               <did:indy:local:UN9Nk7zDndkLP2VgFfyacA> ) ; ] ;
+                               <did:indy:local:UN9Nk7zDndkLP2VgFfyacA>
+                               <did:web:papanchev.solidweb.org:dids:residence-issuer> ) ; ] ;
     # BirthCountry Bulgaria
     sh:property    [ sh:path     ( cred:credentialSubject citiz:birthCountry ) ;
                      sh:hasValue "Bulgaria" ; ] .
@@ -138,7 +141,8 @@ aifb:GermanResidentCredentialShape
     # Accepted issuers: ethr_did_2 and indy_did_2
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0361c0c20eb8a1d4ab659faa218a23b93bf59f0b4eed4d1d3cd929af3ba977f2c6>
-                               <did:indy:local:UN9Nk7zDndkLP2VgFfyacA> ) ; ] ;
+                               <did:indy:local:UN9Nk7zDndkLP2VgFfyacA>
+                               <did:web:papanchev.solidweb.org:dids:residence-issuer> ) ; ] ;
     # BirthCountry Bulgaria
     sh:property    [ sh:path     ( cred:credentialSubject citiz:birthCountry ) ;
                      sh:hasValue "Germany" ; ] .
@@ -151,7 +155,8 @@ aifb:VasilPapanchevPersonCredentialShape
     # Accepted issuers: ethr_did_2 and indy_did_2
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0361c0c20eb8a1d4ab659faa218a23b93bf59f0b4eed4d1d3cd929af3ba977f2c6>
-                               <did:indy:local:UN9Nk7zDndkLP2VgFfyacA> ) ; ] ;
+                               <did:indy:local:UN9Nk7zDndkLP2VgFfyacA>
+                               <did:web:papanchev.solidweb.org:dids:residence-issuer> ) ; ] ;
     # givenName=Vasil familyName=Papanchev
     sh:property    [ sh:path     ( cred:credentialSubject schema:givenName ) ;
                      sh:hasValue "Vasil" ; ] ;
@@ -166,7 +171,8 @@ aifb:WassilPapantschewPersonCredentialShape
     # Accepted issuers: ethr_did_2 and indy_did_2
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0361c0c20eb8a1d4ab659faa218a23b93bf59f0b4eed4d1d3cd929af3ba977f2c6>
-                               <did:indy:local:UN9Nk7zDndkLP2VgFfyacA> ) ; ] ;
+                               <did:indy:local:UN9Nk7zDndkLP2VgFfyacA>
+                               <did:web:papanchev.solidweb.org:dids:residence-issuer> ) ; ] ;
     # givenName=Vasil familyName=Papanchev
     sh:property    [ sh:path     ( cred:credentialSubject schema:givenName ) ;
                      sh:hasValue "Wassil" ; ] ;
@@ -196,7 +202,8 @@ aifb:CovidVaccinationCredentialShape
     # Accepted issuers: ethr_did_4 and indy_did_4
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x032ab0578c8f89cee229b5f9ba1e7c10e7b1ae80b3b878ebc6a6719c08919159f1>
-                               <did:indy:local:JU2z7ab1eewNnFbEstrbef> ) ; ] ;
+                               <did:indy:local:JU2z7ab1eewNnFbEstrbef>
+                               <did:web:papanchev.solidweb.org:dids:vaccination-issuer> ) ; ] ;
     # Credential Subject Type = Vaccination Event
     sh:property    [ sh:path  cred:credentialSubject ;
                      sh:class vacc:VaccinationEvent ; ] ;
