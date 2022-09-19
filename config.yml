@@ -33,5 +33,7 @@ services:
       host: uni-resolver
       port: 8080
       api:  "/1.0/identifiers/{did}"
+    multiprocessing:
+      num_processes: 2
     logging:
       level: DEBUG
