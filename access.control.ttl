@@ -73,6 +73,13 @@ aifb:resource_requires_person_wassil
     acl:mode                acl:Read ;
     aifb:requiredCredential aifb:WassilPapantschewPersonCredentialShape .
 
+aifb:resource_requires_person_alice
+    a                       acl:Authorization ;
+    acl:accessTo            <http://aifb.example.org/alice/resources/r1> ;
+    acl:agent               acl:AuthenticatedAgent ;
+    acl:mode                acl:Read ;
+    aifb:requiredCredential aifb:AlicePersonCredentialShape .
+
 aifb:resource_requires_driver
     a                       acl:Authorization ;
     acl:accessTo            <http://aifb.example.org/drivers/resources/r1> ;
@@ -92,7 +99,7 @@ aifb:BachelorScienceDegreeCredentialShape
     sh:targetClass cred:VerifiableCredential ;
     # Credential of type: https://example.org/examples#UniversityDegreeCredential
     sh:class       ex:UniversityDegreeCredential ;
-    # Accepted issuers: ethr_did_1 and indy_did_1
+    # Accepted issuers: ethr_did_1 and indy_did_1 and the appropriate WebDID issuer
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0325d091902e468755694b1323dd63da52d05238384f0bf93b0e30f6dc5bc641d7>
                                <did:indy:local:YY81GvjZpA9yu9bv3co6tZ>
@@ -108,7 +115,7 @@ aifb:BachelorArtsDegreeCredentialShape
     sh:targetClass cred:VerifiableCredential ;
     # Credential of type: https://example.org/examples#UniversityDegreeCredential
     sh:class       ex:UniversityDegreeCredential ;
-    # Accepted issuers: ethr_did_1 and indy_did_1
+    # Accepted issuers: ethr_did_1 and indy_did_1 and the appropriate WebDID issuer
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0325d091902e468755694b1323dd63da52d05238384f0bf93b0e30f6dc5bc641d7>
                                <did:indy:local:YY81GvjZpA9yu9bv3co6tZ>
@@ -124,7 +131,7 @@ aifb:BulgarianResidentCredentialShape
     sh:targetClass cred:VerifiableCredential ;
     # Credential type: https://w3id.org/citizenship#PermanentResidentCard
     sh:class       citiz:PermanentResidentCard ;
-    # Accepted issuers: ethr_did_2 and indy_did_2
+    # Accepted issuers: ethr_did_2 and indy_did_2 and the appropriate WebDID issuer
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0361c0c20eb8a1d4ab659faa218a23b93bf59f0b4eed4d1d3cd929af3ba977f2c6>
                                <did:indy:local:UN9Nk7zDndkLP2VgFfyacA>
@@ -138,7 +145,7 @@ aifb:GermanResidentCredentialShape
     sh:targetClass cred:VerifiableCredential ;
     # Credential type: https://w3id.org/citizenship#PermanentResidentCard
     sh:class       citiz:PermanentResidentCard ;
-    # Accepted issuers: ethr_did_2 and indy_did_2
+    # Accepted issuers: ethr_did_2 and indy_did_2 and the appropriate WebDID issuer
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0361c0c20eb8a1d4ab659faa218a23b93bf59f0b4eed4d1d3cd929af3ba977f2c6>
                                <did:indy:local:UN9Nk7zDndkLP2VgFfyacA>
@@ -152,7 +159,7 @@ aifb:VasilPapanchevPersonCredentialShape
     sh:targetClass cred:VerifiableCredential ;
     # Credential type: https://w3id.org/citizenship#PermanentResidentCard
     sh:class       citiz:PermanentResidentCard ;
-    # Accepted issuers: ethr_did_2 and indy_did_2
+    # Accepted issuers: ethr_did_2 and indy_did_2 and the appropriate WebDID issuer
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0361c0c20eb8a1d4ab659faa218a23b93bf59f0b4eed4d1d3cd929af3ba977f2c6>
                                <did:indy:local:UN9Nk7zDndkLP2VgFfyacA>
@@ -168,7 +175,7 @@ aifb:WassilPapantschewPersonCredentialShape
     sh:targetClass cred:VerifiableCredential ;
     # Credential type: https://w3id.org/citizenship#PermanentResidentCard
     sh:class       citiz:PermanentResidentCard ;
-    # Accepted issuers: ethr_did_2 and indy_did_2
+    # Accepted issuers: ethr_did_2 and indy_did_2 and the appropriate WebDID issuer
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x0361c0c20eb8a1d4ab659faa218a23b93bf59f0b4eed4d1d3cd929af3ba977f2c6>
                                <did:indy:local:UN9Nk7zDndkLP2VgFfyacA>
@@ -179,6 +186,23 @@ aifb:WassilPapantschewPersonCredentialShape
     sh:property    [ sh:path     ( cred:credentialSubject schema:familyName ) ;
                      sh:hasValue "Papantschew" ; ] .
 
+aifb:AlicePersonCredentialShape
+    a              sh:NodeShape ;
+    sh:targetClass cred:VerifiableCredential ;
+    # Credential type: https://w3id.org/citizenship#PermanentResidentCard
+    sh:class       citiz:PermanentResidentCard ;
+    # Accepted issuers: ethr_did_2 and indy_did_2 and the appropriate WebDID issuer
+    sh:property    [ sh:path cred:issuer ;
+                     sh:in   ( <did:ethr:0x3:0x0361c0c20eb8a1d4ab659faa218a23b93bf59f0b4eed4d1d3cd929af3ba977f2c6>
+                               <did:indy:local:UN9Nk7zDndkLP2VgFfyacA>
+                               <did:web:papanchev.solidweb.org:dids:residence-issuer> ) ; ] ;
+    # givenName=Vasil familyName=Papanchev
+    sh:property    [ sh:path     ( cred:credentialSubject schema:givenName ) ;
+                     sh:hasValue "Alice" ; ] ;
+    sh:property    [ sh:path     ( cred:credentialSubject schema:familyName ) ;
+                     sh:hasValue "Papancheva" ; ] .
+
+# Do not use: the https://w3id.org/vdl context is missing
 aifb:GermanDriverLicenseCredentialShape
     a              sh:NodeShape ;
     sh:targetClass cred:VerifiableCredential ;
@@ -199,7 +223,7 @@ aifb:CovidVaccinationCredentialShape
     sh:targetClass cred:VerifiableCredential ;
     # Credential type: https://w3id.org/vaccination#VaccinationCertificate
     sh:class       vacc:VaccinationCertificate ;
-    # Accepted issuers: ethr_did_4 and indy_did_4
+    # Accepted issuers: ethr_did_4 and indy_did_4 and the appropriate WebDID issuer
     sh:property    [ sh:path cred:issuer ;
                      sh:in   ( <did:ethr:0x3:0x032ab0578c8f89cee229b5f9ba1e7c10e7b1ae80b3b878ebc6a6719c08919159f1>
                                <did:indy:local:JU2z7ab1eewNnFbEstrbef>
